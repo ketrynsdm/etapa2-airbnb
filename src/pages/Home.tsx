@@ -1,15 +1,21 @@
-import React from "react";
+import Header from "../components/Header";
 
-import styles from '../styles/Home.module.css';
 
-function Home() {
+import styles from '../assets/styles/Home.module.scss';
+
+
+ export function Home() {
     return (
-       <div className={styles.container}>
-            <div>Header</div>
-            <div>Accomodation</div>
-            <div>Footer</div>
+       <div className={styles.page_home}>
+         <Header/>
+
+           <main>
+                <div className={styles.home_title}>
+                    <h1>Acomodações</h1>
+                  
+                </div>
+           </main>
        </div>
     );
 }
 
-export default Home;
