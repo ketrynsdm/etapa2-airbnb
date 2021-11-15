@@ -1,16 +1,40 @@
-import Header from "../components/Header";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import logo  from '../assets/images/logo.png';
 
-
-import styles from '../assets/styles/Home.module.scss';
-
+import '../assets/styles/Home.module.scss';
 
  export function Home() {
     return (
-       <div className={styles.page_home}>
-         <Header/>
-
-           <main>
-                <div className={styles.home_title}>
+       <div id="page-home">
+          <header>
+             <div className="content">
+               <img src={logo} alt="Logo" title="Airbnb"/> 
+               <nav className="header-container">
+                  <ul>
+                    <li id="search">
+                      <a href="/search">
+                        <input placeholder="Pesquise o local"/>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/host">Seja um anfitrião</a>
+                    </li>
+                    <li>
+                      <a href="/user">
+                        <FontAwesomeIcon 
+                          icon={faUserCircle}
+                          className="user"
+                        />
+                      </a>
+                    </li>          
+                  </ul>
+               </nav>
+              </div>
+            </header>
+            
+            <main>
+                <div className="home-title">
                     <h1>Acomodações</h1>
                   
                 </div>
