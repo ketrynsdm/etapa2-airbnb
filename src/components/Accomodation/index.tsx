@@ -3,33 +3,25 @@ import React from 'react';
 import './styleAccomodation.scss';
 
 type AccomodationProps = {
-    id: string;
+   
     nome: string;
-    sumario: string;
     descricao: string;
-    regrasDaCasa: string;
     image: string;
     nota: string;
 }
 
-export function Accomodation({
-    image,
-    nome,
-    descricao,
-    nota
-    }: AccomodationProps) {
+export function Accomodation(props: AccomodationProps) {
     return (
         <div className="accomodation">
             <header>
-               <img src={image} alt="Foto da acomodação"/>
-                <p>{nome}</p>
-                <span>{descricao}</span>
+               <img src={props.image} alt="Foto da acomodação"/>
+                <p>{props.nome}</p>
+                <span>{props.descricao}</span>
             </header>    
               <footer>
-                    <span>{nota}</span>
+                    <span>{props.nota}</span>
              </footer>   
         </div>    
     );
 }
 
-export default Accomodation;

@@ -1,5 +1,5 @@
 import { Button } from '../components/Button/index';
-import Accomodation from '../components/Accomodation';
+import { Accomodation } from '../components/Accomodation';
 
 import logo  from '../assets/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -45,7 +45,12 @@ export function Home() {
                 <div className="home-title">
                     <h1>Acomodações</h1>
                 </div>
-
+                <Accomodation
+                    image='https://capricho.abril.com.br/wp-content/uploads/2017/12/airbnb.jpg?quality=85&strip=info&w=1024'
+                    nome='Chalé'
+                    descricao='Chalé na árvore'
+                    nota='10'
+                />
             </main>
         </div>
     );
