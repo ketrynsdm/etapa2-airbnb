@@ -1,32 +1,35 @@
 import React from 'react';
 
-import './style.module.scss';
+import './styleAccomodation.scss';
 
-export interface Accomodation {
+type AccomodationProps = {
     id: string;
     nome: string;
     sumario: string;
     descricao: string;
     regrasDaCasa: string;
+    image: string;
+    nota: string;
 }
 
-interface AccomodationProps {
-    accomodation: Accomodation;
-}
-
-const AccomodationItem: React.FC<AccomodationProps> = ({ accomodation }) => {
+export function Accomodation({
+    image,
+    nome,
+    descricao,
+    nota
+    }: AccomodationProps) {
     return (
-        <article className="accomodation_item">
+        <div className="accomodation">
             <header>
-                <div>
-                    <strong>{accomodation.nome}</strong>
-                    <span>{accomodation.sumario}</span>
-                </div>
-            </header>
-
-            <p>{accomodation.descricao}</p>
-        </article>    
+               <img src={image} alt="Foto da acomodação"/>
+                <p>{nome}</p>
+                <span>{descricao}</span>
+            </header>    
+              <footer>
+                    <span>{nota}</span>
+             </footer>   
+        </div>    
     );
 }
 
-export default AccomodationItem;
+export default Accomodation;

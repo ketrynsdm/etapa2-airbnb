@@ -1,3 +1,5 @@
+import { Button } from '../components/Button/index';
+
 import logo  from '../assets/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
@@ -30,6 +32,7 @@ export function Home() {
                             </a>
                          </li>
                      </ul>
+                     
                  </nav>
               </div>
             </header>
