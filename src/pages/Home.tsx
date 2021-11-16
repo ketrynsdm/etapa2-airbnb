@@ -1,4 +1,5 @@
 import { Button } from '../components/Button/index';
+import Accomodation from '../components/Accomodation';
 
 import logo  from '../assets/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,7 +7,10 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 import '../assets/styles/homeStyle.scss';
 
+
 export function Home() {
+    
+
     return (
         <div id="page-home">
             <header>
@@ -41,6 +45,7 @@ export function Home() {
                 <div className="home-title">
                     <h1>Acomodações</h1>
                 </div>
+
             </main>
         </div>
     );
