@@ -14,7 +14,7 @@ import '../assets/styles/homeStyle.scss';
 export function Home() {
     const [dados, setDados] = useState<Airbnb[]>();
     const [dadosBuscados, setDadosBuscados] = useState<Airbnb[]>();
-    const [url, setUrl] = useState('http://localhost:1234/api/reserva/listar');
+    const url = 'http://localhost:1234/api/reserva/listar';
     const [carregando, setCarregando] = useState(false);
     const [erro, setErro] = useState(false);
 
