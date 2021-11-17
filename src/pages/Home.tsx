@@ -75,7 +75,7 @@ export function Home() {
                                 </Link>
                             </li>
                             <li id="host">
-                                <Link to="/auth">
+                                <Link to="/registration">
                                     Seja um anfitrição
                                 </Link>
                             </li>
