@@ -13,14 +13,16 @@ type AccomodationProps = {
 export function Accomodation(props: AccomodationProps) {
     return (
         <div className="accomodation">
+            <img src={props.image} alt="Foto da acomodação"/>
             <header>
-               <img src={props.image} alt="Foto da acomodação"/>
-                <p>{props.nome}</p>
-                <span>{props.descricao}</span>
+              <div className="descriptionAccomodation">
+                    <p>{props.nome}</p>
+                    <span>{props.descricao}</span>
+               </div>
             </header>    
-              <footer>
-                    <span>{props.nota}</span>
-             </footer>   
+            <footer>
+               <span>{props.nota}</span>
+            </footer>
         </div>    
     );
 }

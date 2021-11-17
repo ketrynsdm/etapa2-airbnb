@@ -12,6 +12,7 @@
             align-items: center;
 
             > img {
+                width: 30px;
                 max-height: 25px;  
             }
         }
@@ -27,9 +28,20 @@
                 text-transform: capitalize;
                 font-family: 'Poppins', sans-serif;
 
-                li a input {
+                li a  {
                     border-radius: 999px;
                     color: #fff;
+                }
+
+                input {
+                    
+                    border-radius: 800px;
+                    margin: 0 auto;
+                    padding: 10px;
+                    border: 1px solid #B0B0B0;
+                    color: #222222;
+                    height: 30px;
+                    width: 446px;
                 }
 
                 li {

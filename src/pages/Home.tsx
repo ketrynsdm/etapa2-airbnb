@@ -31,6 +31,8 @@ export function Home() {
                          <li id="user">
                             <a href="#">
                             <FontAwesomeIcon 
+                                size='2x'
+                                color='#B0B0B0'
                                 icon={faUserCircle}
                              />
                             </a>
@@ -46,11 +48,12 @@ export function Home() {
                     <h1>Acomodações</h1>
                 </div>
                 <Accomodation
-                    image='https://capricho.abril.com.br/wp-content/uploads/2017/12/airbnb.jpg?quality=85&strip=info&w=1024'
-                    nome='Chalé'
-                    descricao='Chalé na árvore'
-                    nota='10'
+                    image=''
+                    nome=''
+                    descricao=''
+                    nota=''
                 />
+                
             </main>
         </div>
     );

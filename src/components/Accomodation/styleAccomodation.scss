@@ -1,28 +1,50 @@
 .accomodation {
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    display: flex;
     padding: 24px;
+    border-bottom: 1px solid #e2e2e2;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(235, 174, 174, 0.04);
+    
+
+    
+
+    & + .accomodation {
+        margin-top: 8px;
+    }
 
     img {
+        display: flex;
         width: 300px;
         border-radius: 20px;
     }
 
-    p {
-        color: #29292e;
+    .descriptionAccomodation{
+       
+        padding: 24px;
+        align-items: center;
+        margin-left: 10px;
+    
+
+        p {
+            display: flex;
+            color: #060607;
+            font-size: 20px;
+        }
+
+        span {
+            display: flex;
+            color: #737380;
+            font-size: 14px;
+        }
     }
 
     footer {
         display: flex;
+        color: #737380;
         justify-content: space-between;
         align-items: center;
-        margin-top: 24px;
-
-        span {
-            margin-left: 8px;
-            color: #737380;
-            font-weight: 500;
-            font-size: 14px;
-        }
+        margin-top: 150px;
     }
+   
 }
+   
