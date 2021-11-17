@@ -1,29 +1,33 @@
 import React from 'react';
 
 import './styleAccomodation.scss';
-
+import { Airbnb } from '../dtos/AirbnbDtos'
 type AccomodationProps = {
-   
-    nome: string;
-    descricao: string;
-    image: string;
-    nota: string;
+
+    airbnbAccomodation: Airbnb;
 }
 
 export function Accomodation(props: AccomodationProps) {
     return (
         <div className="accomodation">
-            <img src={props.image} alt="Foto da acomodação"/>
+            <img src={props.airbnbAccomodation.imagem} alt="Foto da acomodação" />
             <header>
-              <div className="descriptionAccomodation">
-                    <p>{props.nome}</p>
-                    <span>{props.descricao}</span>
-               </div>
-            </header>    
-            <footer>
-               <span>{props.nota}</span>
-            </footer>
-        </div>    
+                <div>
+                    <p>{props.airbnbAccomodation.tipoDePropriedade} in {props.airbnbAccomodation.cidade} </p>
+                    <h2>{props.airbnbAccomodation.nome}</h2>
+                    <span>{props.airbnbAccomodation.numDeHospedes} hóspede(s)•
+                        {props.airbnbAccomodation.numDeQuartos} quarto(s)•
+                        {props.airbnbAccomodation.numDeCamas} cama(s)•
+                        {props.airbnbAccomodation.numDeBanheiros} banheiro(s)
+                    </span>
+                </div>
+                <footer>
+                    <p>★{props.airbnbAccomodation.nota}</p>
+                    <p><strong>{props.airbnbAccomodation.precoPorNoite}</strong> / Noite</p>
+                </footer>
+            </header>
+
+        </div>
     );
 }
 
