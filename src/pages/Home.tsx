@@ -36,7 +36,7 @@ export function Home() {
                             </Link>
                          </li>
                          <li id="user">
-                            <Link to="/pageLogin">
+                            <Link to="/auth">
                             <FontAwesomeIcon 
                                 size='2x'
                                 color='#B0B0B0'
