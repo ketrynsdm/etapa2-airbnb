@@ -1,11 +1,10 @@
 .button {
-    margin-top: 64px;
+    
     height: 50px;
     border-radius: 8px;
     font-weight: 500;
-    background: #fff;
-    justify-content: space-between;
-    color: #222222;
+    background: #FF385C;
+    color: #fff;
     padding: 0 32px;
     display: flex;
     justify-content: center;
@@ -16,7 +15,7 @@
     transition: filter 0.2s;
 
     &:hover {
-        filter: brightness(0.9);
-        background-color: #EBEBEB;   
+        background-color: #EBEBEB; 
+        color:#FF385C;  
     }
 }

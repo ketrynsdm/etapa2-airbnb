@@ -1,9 +1,11 @@
-import { Button } from '../components/Button/index';
+import { Link } from 'react-router-dom';
+
 import { Accomodation } from '../components/Accomodation';
+
 
 import logo  from '../assets/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faUserCircle, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 import '../assets/styles/homeStyle.scss';
 
@@ -19,23 +21,28 @@ export function Home() {
                  <nav className="nav-container">
                      <ul>
                          <li id="search">
-                            <a href="#">
+                            <Link to="#">
                                 <input placeholder="Pesquise o local"/>
-                            </a>
+                                <FontAwesomeIcon
+                                    size='1x'
+                                    color='#FF385C'
+                                    icon={faSearch}
+                                />
+                            </Link>
                          </li>
                          <li id="host">
-                            <a href="#">
+                            <Link to="#">
                                 Seja um anfitrição
-                            </a>
+                            </Link>
                          </li>
                          <li id="user">
-                            <a href="#">
+                            <Link to="/pageLogin">
                             <FontAwesomeIcon 
                                 size='2x'
                                 color='#B0B0B0'
                                 icon={faUserCircle}
                              />
-                            </a>
+                            </Link>
                          </li>
                      </ul>
                      
