@@ -60,6 +60,11 @@ export function Home() {
                     <img src={logo} alt="Logo" title="Airbnb" />
                     <nav className="nav-container">
                         <ul>
+                            <li id="host">
+                                <Link to="/registrationAirbnb">
+                                    cadastrar airbnb
+                                </Link>
+                            </li>
                             <li id="search">
                                 <Link to="#">
                                     <input type="text" onChange={
@@ -75,7 +80,7 @@ export function Home() {
                                 </Link>
                             </li>
                             <li id="host">
-                                <Link to="/registration">
+                                <Link to="/registrationUser">
                                     Seja um anfitrição
                                 </Link>
                             </li>

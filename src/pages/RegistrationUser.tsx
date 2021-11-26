@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 import '../assets/styles/authStyle.scss'
 
-export function Registration() {
+export function RegistrationUser() {
     const [username, setusername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setpassword] = useState('');

@@ -1,0 +1,62 @@
+.user-auth {
+    padding-top: 50px;
+    width: 35vw;
+    margin: 0 auto;
+   
+    h1 {
+        font-size: 40px;
+        color: #FF385C;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    
+    .form-radio{
+        display: flex;
+    }
+
+    .form-radio p{
+        margin-right: 30px;
+        margin-left: 6px;
+        margin-top: 8px;
+        margin-bottom: 5px;
+        color: #979797;
+        font-size: 16px;
+    }
+    .form-control {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .form-control label {
+        margin-bottom: 5px;
+        color: #979797;
+        font-size: 16px;
+    }
+
+    .form-control input  {
+        border-radius: 4px;
+        border: 1px solid #bbbbbb;
+        height: 36px;
+        padding: 15px 10px;
+        
+    }
+    .form-control textarea {
+        border-radius: 4px;
+        border: 1px solid #bbbbbb;
+        height: 80px;
+        padding: 15px 10px;
+        
+    }
+    .button-auth {
+        display: flex;
+        padding-top: 10px;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+}
+
+label{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
