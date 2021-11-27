@@ -30,6 +30,34 @@
 
     }
 
+    input{
+        display: flex;
+        border-radius: 800px;
+        padding: 10px;
+        border: 1px solid #B0B0B0;
+        color: #222222;
+        height: 30px;
+        
+    }
+
+    label{
+        margin-top: 20px;
+        margin-left: 10px;
+        display: flex;
+    }
+
+    button{
+        margin-top: 20px;
+        margin-left: 5px;
+        border-radius: 800px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border: 1px solid #B0B0B0;
+        color: #fff;
+        height: 30px;
+        cursor: pointer;
+    }
+
     footer {
         display: flex;
         justify-content: space-between;
