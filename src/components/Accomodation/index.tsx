@@ -5,11 +5,14 @@ import { Airbnb } from '../dtos/AirbnbDtos'
 type AccomodationProps = {
 
     airbnbAccomodation: Airbnb;
+    
 }
 
 export function Accomodation(props: AccomodationProps) {
     return (
+        
         <div className="accomodation">
+            <div></div>
             <img src={props.airbnbAccomodation.imagem} alt="Foto da acomodação" />
             <header>
                 <div>
