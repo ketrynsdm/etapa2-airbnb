@@ -5,6 +5,8 @@ import logo from '../../assets/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faSearch } from '@fortawesome/free-solid-svg-icons'
 
+import './stylesHeader.scss';
+
 export function Header() {
     const [dados, setDados] = useState<Airbnb[]>();
     const [dadosBuscados, setDadosBuscados] = useState<Airbnb[]>();
@@ -12,37 +14,39 @@ export function Header() {
     const [carregando, setCarregando] = useState(false);
     const [erro, setErro] = useState(false);
 
-    async function consultarAirbnb() {
-        setErro(false);
-        setCarregando(true);
-        try {
-            const resultado = await fetch(url);
-            if (resultado.ok) {
-                const dados: Airbnb[] = await resultado.json();
-                setDados(dados);
-                setDadosBuscados(dados)
-            } else {
+
+    useEffect(() => {
+        async function consultarAirbnb() {
+            setErro(false);
+            setCarregando(true);
+            try {
+                const resultado = await fetch(url);
+                if (resultado.ok) {
+                    const dados: Airbnb[] = await resultado.json();
+                    setDados(dados);
+                    setDadosBuscados(dados)
+                } else {
+                    setErro(true);
+                }
+            } catch (error) {
                 setErro(true);
             }
-        } catch (error) {
-            setErro(true);
+            setCarregando(false);
         }
-        setCarregando(false);
-    }
-    consultarAirbnb();
-}, [url]);
+        consultarAirbnb();
+    }, [url]);
 
-const buscarDados = (value: string) => {
+    const buscarDados = (value: string) => {
 
-    if (value) {
-        const dadosEncontrados = dados!.filter(dados => dados.cidade === value);
-        setDadosBuscados(dadosEncontrados);
-    }
-    else {
-        setDadosBuscados(dados);
-    }
+        if (value) {
+            const dadosEncontrados = dados!.filter(dados => dados.cidade === value);
+            setDadosBuscados(dadosEncontrados);
+        }
+        else {
+            setDadosBuscados(dados);
+        }
 
-}
+    }
 
     return (
             <header>
