@@ -7,16 +7,25 @@ import { useEffect, useState } from "react";
 import logo from '../assets/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faSearch } from '@fortawesome/free-solid-svg-icons'
+import axios from 'axios';
 
 import '../assets/styles/homeStyle.scss';
 
 
 export function Home() {
     const [dados, setDados] = useState<Airbnb[]>();
+    const [cidade, setCidade] = useState('');
+    const [preco, setPreco] = useState('0');
+    const [tipoDePropriedade, setTipoDePropriedade] = useState('');
     const [dadosBuscados, setDadosBuscados] = useState<Airbnb[]>();
     const url = 'http://localhost:1234/api/reserva/listar';
     const [carregando, setCarregando] = useState(false);
     const [erro, setErro] = useState(false);
+    const api = axios.create({
+        baseURL: 'http://localhost:1234/api',
+        timeout: 1000,
+    }
+    );
 
 
     useEffect(() => {
@@ -40,17 +49,6 @@ export function Home() {
         consultarAirbnb();
     }, [url]);
 
-    const buscarDados = (value: string) => {
-
-        if (value) {
-            const dadosEncontrados = dados!.filter(dados => dados.cidade === value);
-            setDadosBuscados(dadosEncontrados);
-        }
-        else {
-            setDadosBuscados(dados);
-        }
-
-    }
 
 
     return (
@@ -67,21 +65,33 @@ export function Home() {
                             </li>
                             <li id="search">
                                 <Link to="#">
-                                    <input type="text" onChange={
+                                    <input type="text" value={cidade} onChange={
                                         (e) => {
-                                            const { value } = e.target;
-                                            buscarDados(value);
+                                            setCidade(e.target.value);
+                                            if (cidade.length >= 1) {
+                                                setDadosBuscados(dados);
+                                            }
                                         }} placeholder="Pesquise o local" />
-                                    <FontAwesomeIcon className="icon"
-                                        size='1x'
-                                        color='#FF385C'
-                                        icon={faSearch}
-                                    />
                                 </Link>
+
+
+                            </li>
+
+                            <li id="searchButton" onClick={e => {
+                                e.preventDefault();
+                                api.get(`/buscar/cidade/${cidade}`).then(response => setDadosBuscados(response.data));
+                            }}>
+
+                                <FontAwesomeIcon className="icon"
+                                    size='1x'
+                                    color='#FF385C'
+                                    icon={faSearch}
+                                />
+
                             </li>
                             <li id="host">
                                 <Link to="/registrationUser">
-                                    Seja um anfitrição
+                                    Seja um anfitrião
                                 </Link>
                             </li>
                             <li id="user">
@@ -97,15 +107,48 @@ export function Home() {
 
                     </nav>
                 </div>
+                <div className="content-filter">
+                    <div className="div-filter">
+                        <p><strong>Preço:</strong> R$0</p>
+                        <input type="range" min="0" max="500" step="10" name="preco" id="preco" onChange={
+                            e => {
+                                setPreco(e.target.value);
+                            }
+                        } />
+                        <p>R${preco}</p>
+                        <p><strong>Tipo de imóvel:</strong></p>
+                        <select name="tipoDePropriedade" id="tipoDePropriedade" onChange={
+                            e => {
+                                setTipoDePropriedade(e.target.value);
+                            }
+                        }>
+                            <option value="---">---</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="House">House</option>
+
+                        </select>
+
+                    </div>
+
+                    <button onClick={
+                        e => {
+                            e.preventDefault();
+                            console.log(tipoDePropriedade);
+                            api.get(`/filtro/${preco}/${tipoDePropriedade}`).then(response => setDadosBuscados(response.data));
+                        }
+                    }>
+                        Filtrar
+                    </button>
+                </div>
             </header>
 
             <main>
                 <div className="home-title">
                     <h1>Acomodações</h1>
                 </div>
-                {erro && <div>Ocorreu um erro!</div>}
+                {erro && <div><h1>Ocorreu um erro!</h1></div>}
                 {carregando ? (
-                    <div>Carregando...</div>
+                    <div><h1>Carregando...</h1></div>
                 ) : (
                     dados && (
                         <>

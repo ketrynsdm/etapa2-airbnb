@@ -23,7 +23,7 @@ export function Accomodation(props: AccomodationProps) {
                 </div>
                 <footer>
                     <p>★{props.airbnbAccomodation.nota}</p>
-                    <p><strong>{props.airbnbAccomodation.precoPorNoite}</strong> / Noite</p>
+                    <p><strong>R${props.airbnbAccomodation.precoPorNoite}</strong> / Noite</p>
                 </footer>
             </header>
 

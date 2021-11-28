@@ -102,7 +102,7 @@ export function RegistrationAirbnb() {
                     } placeholder="Informe as regras da casa" />
                     <label htmlFor="tipoDePropriedade">Tipo de propriedade</label>
                     <div className="form-radio">
-                        <input type="radio" id="Apartament" name="tipoDePropriedade" value="Apartament" onChange={
+                        <input type="radio" id="Apartment" name="tipoDePropriedade" value="Apartment" onChange={
                             e => {
                                 e.preventDefault();
                                 setTipoDePropriedade(e.target.value);
