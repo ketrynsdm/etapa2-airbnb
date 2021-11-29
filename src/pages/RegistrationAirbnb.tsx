@@ -16,7 +16,6 @@ export function RegistrationAirbnb() {
     const [sumario, setSumario] = useState('');
     const [espaco, setEspaco] = useState('');
     const [descricao, setDescricao] = useState('');
-    const [nota, setNota] = useState('');
     const [acesso, setAcesso] = useState('');
     const [regrasDaCasa, setRegrasDaCasa] = useState('');
     const [tipoDePropriedade, setTipoDePropriedade] = useState('');
@@ -28,7 +27,7 @@ export function RegistrationAirbnb() {
     const [numDeHospedes, setNumDeHospedes] = useState('');
     const [numDeCamas, setNumDeCamas] = useState('');
     const [imagem, setImagem] = useState('');
-    const [teste, setTeste] = useState('');
+
 
 
 
@@ -79,13 +78,6 @@ export function RegistrationAirbnb() {
                             setDescricao(e.target.value);
                         }
                     } placeholder="Descreva em detalhes seu imoóvel, itens e benefícios" />
-
-                    <label htmlFor="nota">Nota</label>
-                    <input id="nota" type="text" name="nota" value={nota} onChange={
-                        e => {
-                            setNota(e.target.value);
-                        }
-                    } placeholder="Informe sua senha" />
 
                     <label htmlFor="acesso">Acesso</label>
                     <input id="acesso" type="text" name="acesso" value={acesso} onChange={
@@ -180,7 +172,6 @@ export function RegistrationAirbnb() {
                     <Button onClick={
                         e => {
                             e.preventDefault();
-                            console.log(teste);
                             api.post('/reserva/cadastrar',
                                 {
                                     id: id,
@@ -189,7 +180,7 @@ export function RegistrationAirbnb() {
                                     sumario: sumario,
                                     espaco: espaco,
                                     descricao: descricao,
-                                    nota: nota,
+                                    nota: " ",
                                     acesso: acesso,
                                     regrasDaCasa: regrasDaCasa,
                                     tipoDePropriedade: tipoDePropriedade,
